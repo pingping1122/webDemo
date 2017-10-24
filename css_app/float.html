@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float特性</title>
+    <style>
+        div {
+            border: 1px solid red;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+    </style>
+
+</head>
+<body>
+<h5>-------[1]测试float的破坏性------------</h5>
+<!--<div>
+    <p>这是Div中未添加float的p元素</p>
+</div>
+<br>
+<div>
+    <p style="float:left">这是Div中添加了float的p元素-&#45;&#45;p标签完全脱离了div，脱离了文档流</p>
+</div>
+<br>
+-->
+<h5>------------[2]测试float的包裹性---------</h5>
+<!--
+<div>这是没有float的div-&#45;&#45;默认撑满整个屏幕</div>
+<br>
+<div style="float:left">这是添加了float的div&#45;&#45;&#45;&#45;设置了float的块元素，只会包裹住其内容</div>
+-->
+
+
+<h5>-----------[3]测试float的清除空格性--------</h5>
+<!--<p>这是p上img没有float-&#45;&#45;图片之间会留有空格</p>
+<p><img src="flower.png" style="height:100px;width:100px"></p>
+<p><img src="flower.png" style="height:100px;width:100px"></p>
+<br>
+<p>这是p上img添加了float-&#45;&#45;&#45;&#45;图片会紧紧在一起，没有空格</p>
+<p><img src="flower.png" style="float:left;height:100px;width:100px" ></p>
+<p><img src="flower.png" style="float:left;height:100px;width:100px"></p>
+
+<br>-->
+
+
+<h5>----------[4]测试float的文字环绕-------------------</h5>
+<!--
+<p style="width:200px;border:1px solid blue">
+    <img src="flower.png" style="height:100px;width:100px;float:left" />
+    文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕</p>-->
+
+
+<h4>------------[4-1]测试float的文字环绕-------如果文字变成字母文字就会溢出边框-------</h4>
+<h5>-----------浏览器默认解析英文或者数字时，是按照单词进行解析。每个单词是一个整体，遇到空间不足时，不会对单词进行拆分-------</h5>
+<h5>-----------css中强制对文字进行换行【word-break: break-all;】------------</h5>
+
+<!--<p style="width:200px;border:1px solid blue;word-break: break-all;">
+    <img src="flower.png" style="height:100px;width:100px;float:left" />
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+
+<br>
+<p style="word-wrap:break-word;width:200px;border:1px solid blue;">
+this contain a long long word thisisalonglonglonglonglonglongword
+</p>
+<br>
+<p style="word-break:break-all;width:200px;border:1px solid blue;">
+    this contain a long long word thisisalonglonglonglonglonglongword
+
+</p>-->
+
+<h5>---------[5]float为什么具有破坏性------为了实现文字环绕--------------</h5>
+<!--
+<div style="width:200px;border:1px solid blue">
+    <img src="flower.png" style="height:100px;width:100px;float:left" />
+    破坏性是为了文字环绕</div>
+<br>
+<div style="width:200px;border:1px solid blue;margin-top:100px">
+    <img src="flower.png" style="height:100px;width:100px;" />
+    没有float</div>-->
+
+
+<h5>------------[6-1]清除浮动float----在所有浮动元素下边添加一个clear:both的元素------float元素不再具有破坏性-------</h5>
+
+<!--<div style="border:1px solid red">
+    <img src="flower.png" style="float:left;height:100px;width:100px">
+    <img src="flower.png" style="float:left;height:100px;width:100px">
+    <p style="clear:both"></p>
+</div>-->
+
+
+<h5>------------[6-2]清除浮动float----clearfix---通过伪元素选择器在元素后面添加clear：both的元素-------</h5>
+
+<!--
+<div class="clearfix">
+    <img src="flower.png" style="float:left;height:100px;width:100px">
+    <img src="flower.png" style="float:left;height:100px;width:100px">
+</div>
+-->
+<h5>------------[7-1]float应用---三列布局-------</h5>
+<!--<div class="clearfix">
+    <div style="float:left;width:20%">
+        左侧内容（宽度可不设置，因为float具有包裹性）
+    </div>
+    <div style="float:right;width:20%">
+        右侧内容（宽度可不设置，因为float具有包裹性）
+    </div>
+    <div>
+        <p>中间内容，中间内容宽度会随着页面宽度变化而变化</p>
+    </div>
+</div>-->
+
+<h5>------------[7-2]float应用---两列布局-------</h5>
+<!--<div class="clearfix">
+    <div style="float:left;width:100px">
+        左侧内容（宽度可不设置，因为float具有包裹性）
+    </div>
+    <div style="margin-left:100px;">
+        右侧内容宽度会随着页面宽度变化而变化
+    </div>
+</div>-->
+
+<h5>------------[8]display:inline没有大小和形状，宽高取决于父元素
+</h5><h6> -------利用float转化为块-------</h6>
+
+<span style="width:200px;height:200px;border:1px solid red">
+    测试inline元素无法设置宽高
+</span>
+<br>
+<!--<span style="width:400px;height:200px;border:1px solid red;float:left">
+    测试inline元素无法设置宽高---利用float转化为块
+</span>-->
+
+<h6>-------利用position:absolute/fixed转化为块-------</h6>
+
+<span style="width:400px;height:200px;border:1px solid red;position:absolute">
+    测试inline元素无法设置宽高----利用position:absolute/fixed转化为块
+</span>
+</body>
+</html>

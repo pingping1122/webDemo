@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> 验证Fn.prototype===fn._proto_</h3>
+
+<script>
+    // function
+    /*  function Fn(){
+     console.log('Fn--');
+     console.log(Fn.prototype);// Fn.prototype的属性constructor的属性值指向函数Fn
+     console.log('Fn--')
+     };
+     var fn=new Fn();
+     console.log('fn--');
+     console.log(fn.__proto__);
+     console.log('fn--');
+     console.log(fn.__proto__===Fn.prototype); //true   === 绝对全等
+
+     console.log(Object instanceof Function);// true
+     console.log(Function instanceof Object);//true
+     console.log(Function instanceof Function);//true
+
+     // Object.prototype.hasOwnProperty();
+     // Function.prototype.call();
+     //Function.prototype.hasOwnProperty();
+
+     console.log(fn.toString());//[object Object]
+     // 重写函数的方法
+     Fn.prototype.toString=function(){
+     return 'ping';
+     };
+     console.log(fn.toString()); //ping
+
+     //执行上下文--1
+     console.log(a);
+     var a;
+     //var a=10;
+
+     console.log(this);
+
+     function foo(x){
+     console.log(arguments);
+     console.log(x);
+     };
+     foo(10);*/
+    // 执行上下文--2
+    // 函数定义的时候，就已经确定了函数体内自由变量的作用域
+    /*  var a = 10;
+     function f1() {
+     // a 是自由变量
+     console.log(a); // 是10，  不是20
+
+     }
+     function f2(f) {
+     var a = 20;
+     console.log('f2');
+     console.log(a);// 20
+     console.log('f2');
+     f();
+     }
+     f2(f1);*/
+
+    /*   //this--构造函数  new出来的对象，this指向即将new出来的对象
+
+     function Foo(){
+     this.name='ping';
+     this.year=1998;
+     console.log(this);  //Foo{name:'ping',year:1998}
+     }
+     var f1=new Foo();
+     console.log(f1.name);
+
+     // 但是如果不是new出来的对象，this指向不同
+     Foo();  // 这时候打印的window{xxxx}*/
+
+    /* //this---函数作为对象的一个属性--并且作为对象的一个属性被调用时，函数中的this指向该对象；
+
+     var obj = {
+     x: 10,
+     fn: function () {
+     console.log(this); //   Object {x:10,fn:fucntion}
+     console.log(this.x);// 10
+     }
+     };
+     obj.fn();
+
+     // 如果fn函数被赋值到另一个变量中，并没有作为obj的一个属性被调用，那么this指向window
+     // this.x 为undefined
+     var fn1 = obj.fn;
+     fn1();*/
+
+    // this-函数用call或apply调用---this值就取决于传入的对象的值；
+    /*var obj={
+     x:10,
+     };
+     var fn=function(){
+     console.log(this); //Object{x:10}
+     console.log(this.x);//10
+     };
+     fn.call(obj);*/
+
+
+    // this---全局&调用普通函数---全局环境下，this指向window；
+    // 普通函数在调用时，this也指向window；
+
+    // console.log(this===window);// true
+
+    // var x=10;
+    //  var fn=function(){
+    //     console.log(this);//window{xxx}
+    //      console.log(this.x);// 10
+    //  };
+    //  fn();
+
+    /*// 函数f虽然是在obj.fn内部定义的 但仍是普通的函数，this指向window
+     var obj={
+     x:10,
+     fn:function(){
+     function f(){
+     console.log(this);//window
+     console.log(this.x);//undefined
+     };
+     f();
+     }
+     };    obj.fn();*/
+
+
+/*
+    //自由变量去何处取
+
+    var a = 10;
+    function fn() {
+        console.log(a);
+    }
+    function show(f) {
+        var a = 20;
+        /!*(function () {
+            f();
+        })();*!/
+        f();
+    }
+
+    show(fn);*/
+
+
+// 闭包中的参数传递
+var max=10;
+fn=function(x){
+    if(x>max){
+        console.log(x);
+    }
+};
+
+(function(f){
+    var max=100;
+    f(16);
+})(fn);
+
+
+
+
+
+</script>
+
+</body>
+</html>

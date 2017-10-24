@@ -1,0 +1,31 @@
+/*媒体查询控制html字体大小*/
+/*@media (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 20px;
+    }
+}*/
+/* vm*/
+html {
+font-size:calc(16 / 768 * 100vm);  /* 以768,16px为标准进行缩放*/
+}
+
+/*页面元素的简单样式*/
+.container {
+    padding: 1rem;
+}
+
+li {
+    font-size: 1rem;
+}

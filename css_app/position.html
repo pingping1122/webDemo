@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+</head>
+<body>
+<h5>-----------relative布局----------------</h5>
+<!--<h6>-&#45;&#45;&#45;&#45;【1】relative-&#45;&#45;会导致自身位置的相对变化，而不会影响到其他元素的位置、大小变化</h6>
+<p>胡萝卜</p>
+<p>红薯</p>
+<p style="position:relative;top:10px;left:10px">哈密瓜</p>
+<p>紫菜</p>-->
+
+<h6>-----【2】relative---会产生一个新的定位上下文</h6>
+<div style="margin:50px">
+    <div style="position:absolute;left:20px;top:20px;">
+        子元素内容
+    </div>
+    父元素内容...<br>
+    父元素内容...<br>
+    父元素内容...<br>
+    父元素内容...<br>
+</div>
+
+<div style="margin:50px;position:relative">
+    <div style="position:absolute;left:20px;top:20px;">
+        子元素内容
+    </div>
+    父元素内容...<br>
+    父元素内容...<br>
+    父元素内容...<br>
+    父元素内容...<br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: gainsboro;
+}
+
+.header {
+    background-color: gray;
+}
+
+.footer {
+    background-color: gray;
+}
+
+.Site-content {
+    flex: 1;
+}

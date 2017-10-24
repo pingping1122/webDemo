@@ -1,0 +1,111 @@
+/*测试table首行红背景，最后一行蓝背景，中间灰白交替*/
+table tr:nth-child(even) {
+    background-color: grey;
+}
+
+table tr:nth-child(odd) {
+    background-color: white;
+}
+
+table tr:first-child {
+    background-color: red;
+}
+
+table tr:last-child {
+    background-color: blue;
+}
+
+/*测试相邻li之间添加下划线*/
+
+ul li + li {
+    border-top: 1px solid #ddd;
+}
+
+/* ::before  与 ::after -----在元素前后添加内容*/
+p:before {
+    content: "H" /*:before和:after必带技能，重要性为满5颗星*/
+}
+
+p:after {
+    content: "d" /*:before和:after必带技能，重要性为满5颗星*/
+}
+/* ::before  与 ::after -----创建三角形demo*/
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid red;
+    border-bottom: 50px solid blue;
+    border-top: 50px solid black;
+    border-right: 50px solid purple
+}
+.triangle1{
+    width: 0;
+    height: 0;
+    border:50px solid transparent; /*这里我们将元素的边框宽度设置为50px，transparent表示边框颜色是透明的，solid表示边框是实线的*/
+    border-top-color: black;  /*这里我们仅将上边框的颜色设置为黑色，众所周知，css后面的样式代码会覆盖之前的相同的样式代码，至于其他三边的还是透明色*/
+    /*border-bottom-color: black; //这里设置底部边框色为黑色
+    border-left-color: black;   //这里设置左边边框色为黑色
+    border-right-color:black    //这里设置右边边框色为黑色*/
+}
+
+/* ::before  与 ::after -----利用三角形demo创建对话框*/
+.test-div{
+    position: relative;  /*日常相对定位*/
+    width:150px;
+    height: 36px;
+    border:1px solid black;
+    border-radius:5px;
+    background: rgba(245,245,245,1)
+}
+.test-div:before,.test-div:after{
+    content: "";  /*:before和:after必带技能，重要性为满5颗星*/
+    display: block;
+    position: absolute;  /*日常绝对定位*/
+    top:8px;
+    width: 0;
+    height: 0;
+    border:6px solid transparent;
+}
+.test-div:before{
+    left:-11px;
+    border-right-color: rgba(245,245,245,1);
+    z-index:1
+}
+.test-div:after{
+    left:-12px;
+    border-right-color: rgba(0,0,0,1);
+    z-index: 0
+}
+
+/*::before  与 ::after -----利用三角形demo创建半透明对话框*/
+body{
+        background: url(center.jpg) no-repeat left top /*这里本兽加了个图片背景，用以区分背景的半透明及内容的完全不透明*/
+}
+.test-div2{
+    position: relative;  /*日常相对定位(重要，下面内容也会介绍)*/
+    width:300px;
+    height: 120px;
+    padding: 20px 10px;
+    font-weight: bold;
+}
+.test-div2:before{
+    position: absolute;  /*日常绝对定位(重要，下面内容也会略带介绍)*/
+    content: "";  /*:before和:after必带技能，重要性为满5颗星*/
+    top:0;
+    left: 0;
+    width: 100%;  /*和内容一样的宽度*/
+    height: 100%;  /*和内容一样的高度*/
+    background: rgba(255,255,255,.5); /*给定背景白色，透明度50%*/
+    z-index:-1 /*日常元素堆叠顺序(重要，下面内容也会略带介绍)*/
+}
+
+
+
+div div
+{
+    border: 10px solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+
+

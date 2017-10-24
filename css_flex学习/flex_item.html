@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .order_box {
+            display: flex;
+        }
+
+        .order_box div {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background: linear-gradient(to right, #ff0, #f0f);
+        }
+
+        .flex-grow_box {
+            display: flex;
+        }
+
+        .flex-grow_box div {
+            height: 100px;
+            width:100px;
+            border: 1px solid black;
+            background: linear-gradient(to right, #ff0, #f0f);
+        }
+
+
+
+        .flex-shrink_box {
+            display: flex;
+            width:300px;
+        }
+
+        .flex-shrink_box div {
+            height: 100px;
+            width:100px;
+            border: 1px solid black;
+            background: linear-gradient(to right, #ff0, #f0f);
+        }
+    </style>
+</head>
+<body>
+<!--<div class="order_box">
+    <div>box1</div>
+    <div>box2</div>
+    <div>box3</div>
+    <div style="order:-1">box4</div>
+
+</div>-->
+
+
+<div class="flex-grow_box">
+    <div style="flex-grow: 1">box1</div>
+    <div style="flex-grow: 1">box2</div>
+    <div style="flex-grow: 2">box3</div>
+    <div style="flex-grow: 1">box4</div>
+
+</div>
+<div class="flex-grow_box">
+    <div style="">box1</div>
+    <div style="">box2</div>
+    <div style="">box3</div>
+    <div style="">box4</div>
+
+</div>
+<div class="flex-shrink_box">
+    <div style="flex-shrink: 1">box1</div>
+    <div style="flex-shrink: 1">box2</div>
+    <div style="flex-shrink: 2">box3</div>
+    <div style="flex-shrink: 1">box4</div>
+
+</div>
+</body>
+</html>

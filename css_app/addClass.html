@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .odd {
+            background-color: #ff0;
+        }
+        .event{
+            background-color: #00e;
+        }
+    </style>
+</head>
+<body>
+<table id="tete">
+    <tr class="event">
+        <td>第一行</td>
+    </tr>
+    <tr>
+        <td>第二行</td>
+    </tr>
+    <tr>
+        <td>第三行</td>
+    </tr>
+</table>
+<script>
+    var rows = '';
+    var tables = document.getElementsByTagName('table');
+    //var tables=document.getElementById('tete');
+    console.log(tables.length);
+    console.log(tables[0]);
+    for (var i = 0; i < tables.length; i++) {
+        rows = tables[i].getElementsByTagName("tr");
+
+        for (var j = 0; j < rows.length; j++) {
+//rows[j].style.backgroundColor="#ff0";
+                addClass(rows[j], "odd");
+
+        }
+
+    }
+    function addClass(element, value) {
+        console.log(element.className);
+        if (element.className=='') {
+            element.className = 'event';
+        }
+        else {
+            element.className = value+'';
+        }
+
+    }</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/jquery.cxcalendar.css">
+</head>
+<body>
+<div>
+    <p>参数中设置默认初始值</p>
+    <input id="element_id" type="text">
+</div>
+<div>
+    <p>双联动日期示例</p>
+    <input id="date_first" type="text">
+    <input id="date_last" type="text">
+</div>
+
+
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/jquery.cxcalendar.js"></script>
+<script>
+
+    // 需在引入 jquery.cxcalendar.js之后，调用之前设置---全局设置
+    $.cxCalendar.defaults.startDate = 1980;
+    $.cxCalendar.defaults.language = {
+        monthList: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        weekList: ['Sun', 'Mon', 'Tur', 'Wed', 'Thu', 'Fri', 'Sat']
+    };
+
+
+    $('#element_id').cxCalendar({
+        date: '1988/01/31 08:00:00', // 参数中设置默认初始值
+        type: 'datetime',
+        format: 'YYYY-MM-DD HH:mm:ss'
+    });
+
+
+    // API 示例
+
+    (function () {
+        var dateFirst = $('#date_first');
+        var dateLast = $('#date_last');
+        var dateFirstApi;
+        var dateLastApi;
+
+        var _opt = {
+            type: 'date',
+            format: 'YYYY-MM-DD'
+        };
+
+
+        dateFirst.cxCalendar(_opt, function (api) {
+            dateFirstApi = api;
+        });
+
+        dateLast.cxCalendar(_opt, function (api) {
+            dateLastApi = api;
+        });
+
+        dateFirst.bind('change', function () {
+            // 10--时间戳取秒级别,getData--'TIME': 时间戳
+            var firstTime = parseInt(dateFirstApi.getDate('TIME'), 10);
+            var lastTime = parseInt(dateLastApi.getDate('TIME'), 10);
+            console.log(firstTime);
+            if (lastTime < firstTime) {
+                dateLastApi.clearDate();
+            }
+            /* 此处startDate 只能指定年份或某一天,不能到具体时间*/
+            dateLastApi.setOptions({
+                startDate: firstTime
+            });
+            dateLastApi.gotoDate(firstTime);
+            dateLastApi.show();
+        });
+    })();
+
+</script>
+</body>
+</html>

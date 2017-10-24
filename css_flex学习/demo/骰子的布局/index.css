@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+/* face +item 定义骰子面板与点样式*/
+.face {
+    display: flex;
+    height: 10rem;
+    width: 10rem;
+    background-color: lightgrey;
+    border: 0.1rem solid darkgrey;
+}
+
+.item {
+    height: 2rem;
+    width: 2rem;
+    background-color: black;
+    border-radius: 1rem;
+}
+
+.face_one {
+    justify-content: center;
+    align-items: center;
+}
+
+.face_two {
+    justify-content: space-between;
+}
+
+.face_two .item:nth-child(2) {
+    align-self: flex-end;
+}
+
+.face_three {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.face_four, .face_six{
+    justify-content: space-between;
+}
+
+.face_four .column, .face_six .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.face_five {
+    justify-content: space-between;
+}
+
+.face_five .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.face_five .column:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

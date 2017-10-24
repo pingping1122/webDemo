@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .flex_direction_box {
+            display: flex;
+            /* flex-direction: row;*/
+            flex-direction: row-reverse;
+            /* flex-direction:column*/
+        }
+
+        .flex_direction_box div {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background: linear-gradient(to right, #ff0, #f0f);
+        }
+
+        .flex_justify-content_box {
+            display: flex;
+            /* justify-content: flex-start;*/
+            /* justify-content: flex-end;*/
+            /*justify-content: center;*/
+            /*justify-content: space-between;*/
+            justify-content: space-around;
+
+        }
+
+        .flex_justify-content_box div {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background: linear-gradient(to right, #ff0, #f0f);
+        }
+
+        .flex_align-items_box {
+            display: flex;
+            /*align-items: flex-start;*/
+            /*align-items: flex-end;*/
+            /* align-items: center;*/
+            height: 600px;
+            width: 800px;
+            border: 1px solid green;
+            align-items: baseline;
+            /* align-items: stretch;*/
+        }
+
+        .flex_align-items_box div {
+
+            width: 100px;
+            border: 1px solid black;
+            background: linear-gradient(to right, #ff0, #f0f);
+        }
+
+        .flex_align-content_box {
+            display: flex;
+            align-content: stretch;
+          /*  align-content: center;*/
+           /* align-content: flex-start;*/
+           /* align-content: flex-end;*/
+           /*  align-content: space-between;*/
+            /* align-content: space-around;*/
+
+            flex-wrap: wrap;
+            border: 1px solid grey;
+            height: 600px;
+            width: 400px;
+        }
+
+        .flex_align-content_box div {
+            height:100px;
+            width: 100px;
+            border: 1px solid black;
+            background: linear-gradient(to right, #ff0, #f0f);
+        }
+    </style>
+</head>
+<body>
+<!--<div class="flex_direction_box">
+    <div>
+        flex-direction_1;
+    </div>
+    <div>
+        flex-direction_2;
+    </div>
+    <div>
+        flex-direction_3;
+    </div>
+</div>
+
+<div class="flex_justify-content_box">
+    <div>
+        flex_justify-content_1;
+    </div>
+    <div>
+        flex_justify-content_2;
+    </div>
+    <div>
+        flex_justify-content_3;
+    </div>
+</div>-->
+
+<!--<div class="flex_align-items_box">
+    <div>
+        baseLine第一行文字对齐是真的吗
+        flex_align-items_1;
+
+    </div>
+    <div>
+        flex_align-items_2;
+    </div>
+    <div>
+        flex_align-items_3;
+    </div>
+</div>-->
+
+
+<div class="flex_align-content_box">
+    <div>
+        flex_align-content_1;
+
+    </div>
+    <div>
+        flex_align-content_2;
+    </div>
+    <div>
+        flex_align-content_3;
+    </div>
+    <div>
+        flex_align-content_4;
+
+    </div>
+    <div>
+        flex_align-content_5;
+    </div>
+    <div>
+        flex_align-content_6;
+    </div>
+    <div>
+        flex_align-content_7;
+
+    </div>
+    <div>
+        flex_align-content_8;
+    </div>
+
+
+</div>
+</body>
+</html>

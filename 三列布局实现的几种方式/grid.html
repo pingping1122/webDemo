@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .grid {
+            display: grid;
+            width: 100%;
+            grid-template-rows: 100px;
+            grid-template-columns: 300px auto 300px;
+        }
+
+        .grid .left {
+            background: red;
+        }
+
+        .grid .center {
+            background: blue;
+        }
+
+        .grid .right {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="grid">
+    <div class="left">
+        grid实现三列布局
+    </div>
+    <div class="center">
+        grid实现三列布局
+    </div>
+    <div class="right">
+        grid实现三列布局
+    </div>
+</div>
+</body>
+</html>

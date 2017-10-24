@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--禁止将页面中的一连串数字识别为电话号码、并设置为手机可以拨打的一个连接。-->
+    <meta name="format-detection" content="telephone=no">
+    <title>鹿饭</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<setion class="page1">
+    <img src="image/background.jpg" alt="背景图" class="page_background">
+    <div class="page1_div">
+        <img src="image/yan.png" alt="你是我的颜">
+        <div class="page1_text_div">
+            <p>我为祖国代颜</p>
+            <div>
+                <img src="image/play.png" alt="马上玩">
+                <input type="file" accept="image/*" onchange="uploadFile(this)">
+            </div>
+        </div>
+    </div>
+</setion>
+
+<section class="page2">
+    <div class="page2_div1">
+        <img src="image/background.jpg" id="bgPicture">
+        <div>
+            <p><label>我在：</label>
+                <input type="text" placeholder="(点击填写)" class="input_text">
+            </p>
+            <p class="info_msg">祝祖国68周年生日快乐！</p>
+        </div>
+    </div>
+    <div class="page2_div2">
+        <button onclick="backToLastPage()">返回上一步</button>
+        <button onclick="saveImg()">点击保存图片</button>
+    </div>
+</section>
+
+<section class="page3">
+    <div>
+        <img src="" alt="生成的代颜图" id="bgPicture1">
+    </div>
+</section>
+
+<canvas id="myCanvas" style="display:none">您的浏览器不支持canvas</canvas>
+<script type="text/javascript" src="js/exif.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/touch-0.2.14.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/uploadFile.js"></script>
+<script type="text/javascript" src="js/inputTouch.js"></script>
+</body>
+</html>
+

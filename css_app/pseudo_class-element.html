@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类和伪元素</title>
+    <style>
+        /*ui伪类*/
+        a:link {
+        }
+
+        a:hover {
+        }
+
+        a:active {
+        }
+
+        a:visited {
+        }
+
+        /*结构化伪类*/
+        table tr:nth-child(even) {
+        }
+
+        table tr:nth-child(odd) {
+        }
+
+        table tr:first-child {
+        }
+
+        table tr:last-child {
+        }
+        /*伪元素：:before + :after*/
+        span:before{
+            content:'A';
+        }
+        span:after{
+            content:'B'
+        }
+    </style>
+</head>
+<body>
+<p>伪类----ui伪类</p>
+
+<p>伪类----结构化伪类</p>
+
+<p>伪元素</p>
+<span>测试伪元素</span>
+</body>
+</html>

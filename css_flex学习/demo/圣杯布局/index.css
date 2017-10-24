@@ -1,0 +1,42 @@
+.panel {
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: gainsboro;
+}
+
+.panel-child {
+    flex: 1;
+}
+
+.panel-header, .panel-footer {
+    flex: 0 0 10vh;
+    background-color: gray;
+}
+
+.panel-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.panel-body-child {
+    flex: 1;
+    background: linear-gradient(to right, gainsboro, grey);
+}
+
+.panel-body-left, .panel-body-right {
+    flex: 0 0 15%;
+}
+
+/* 如果是小屏幕设备，panel-body变为垂直叠加*/
+@media (max-width: 768px) {
+    .panel-body {
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .panel-body-child {
+        flex: auto;
+    }
+}

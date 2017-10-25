@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+}
+
+.img_list {
+    display: flex;
+    width: 45rem;
+    border: 0.1rem solid green;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.img_list .item {
+    height: 10rem;
+    width: 10rem;
+    margin: 0.3rem;
+    border: 0.2rem solid gold;
+    opacity: 0.5;
+}
+.img_list .item:hover {
+    opacity: 1;
+}

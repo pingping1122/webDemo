@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.clock_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    width: 20rem;
+    height: 10rem;
+}
+
+.clock_box .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin: 1rem auto;
+}
+
+.clock_box .row span {
+    color: white;
+    margin: 0.5rem;
+}
+
+.clock_box .row input {
+    width: 2rem;
+    height: 1rem;
+    background-color: white;
+    border:0.1rem solid #B4B4B4;
+}
+
+.clock_box .row button {
+    width: 15rem;
+    height:2em;
+    color: white;
+    border: 0.2rem solid #000;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+
+.green_button{
+    background-color: #0EB81D;
+}
+.red_button{
+    background-color: #9B0F10;
+}

@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and(min-width: 960px) and (max-width: 1199px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and(min-width: 768px) and (max-width: 959px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and(min-width: 480px) and (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+.hero_panel {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.hero_panel_left {
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+}
+
+.hero_panel_left_1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.checkbox_card {
+    width: 3rem;
+    height: 1rem;
+}
+
+.checkbox_card span {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+}
+
+.hero_panel_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 30rem;
+    align-items: flex-start;
+}
+
+.pic_card {
+    width: 4rem;
+    height: 6rem;
+}
+
+.pic_card div {
+    margin: 0 0.5rem;
+    font-size: 0.7rem;
+}
+
+.pic_card img {
+    width: 4rem;
+    height: 4rem;
+}

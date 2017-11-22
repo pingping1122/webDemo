@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 20px;
+}
+
+.panel {
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.item {
+    width: 21rem;
+    border: 0.1rem solid #ddd;
+}
+
+.item select {
+    width: 20rem;
+    margin: 0.5rem auto;
+}
+
+.item textarea {
+    width: 20rem;
+    height: 5rem;
+    margin: 0.5rem auto;
+    resize: vertical;
+}
+.item button {
+    width: 8rem;
+    height: 1rem;
+    margin: 0.5rem auto;
+}

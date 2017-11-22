@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap/js/transition.js"></script>
+    <script src="node_modules/bootstrap/js/collapse.js"></script>
+</head>
+<body>
+<div>
+<a class="btn btn-default" role="button"
+   data-toggle="collapse" href="#collapseExample"
+   aria-expanded="false"
+   aria-controls="collapseExample">
+    增加日志语言
+</a></div>
+<div class="collapse" id="collapseExample">
+    <div class="well">
+        测试collapse折叠功能
+        <select name="language">
+            <option value="volvo">英语</option>
+            <option value="saab">韩语</option>
+            <option value="opel">日语</option>
+            <option value="audi">汉语</option>
+        </select>
+        <input placeholder="请填写该语言日志">
+        <button class="btn btn-primary"
+                data-toggle="collapse" href="#collapseExample"
+        >保存</button>
+    </div>
+</div>
+</body>
+</html>

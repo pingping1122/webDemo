@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baguette</title>
+    <link rel="stylesheet" href="baguetteBox.css" type="text/css">
+</head>
+<body>
+<div class="gallery">
+    <a href="img/3-1.jpg" data-caption="Image caption">
+        <img src="img/thumbnails/3-1.jpg" alt="First image">
+    </a>
+    <a href="img/3-2.jpg">
+        <img src="img/thumbnails/3-2.jpg" alt="Second image">
+    </a>
+    <a href="img/3-3.jpg">
+        <img src="img/thumbnails/3-3.jpg" alt="Third image">
+    </a>
+    <a href="img/3-4.jpg">
+        <img src="img/thumbnails/3-4.jpg" alt="Forth image">
+    </a>
+</div>
+<script>
+    baguetteBox.run('.gallery', {
+        // options
+    });
+</script>
+<script src="baguetteBox.js"></script>
+</body>
+</html>

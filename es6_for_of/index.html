@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6中forof遍历</title>
+</head>
+<body>
+<p>es6中的for of用来替代for in 和forEach()--可遍历数组、字符串、映射、集合等可迭代的数据结构</p>
+<script>
+    console.log('-------------数组遍历-------------');
+    const array = ['Land Rover', 'BMW', 'Bens', 'Audi', 'Lamborghini', 'Lexus'];
+    for (const value of array) {
+        console.log(value);
+    }
+    console.log('------------映射遍历--------------');
+    const map = new Map([['one', 1], ['two', 2]]);
+    for (const [key, value] of map) {
+        console.log('Key:' + key + '----' + 'Value:' + value);
+    }
+    console.log('-----------遍历集合-------------');
+    const set = new Set([1, 2, 3]);
+    for (const setValue of set) {
+        console.log(setValue);
+    }
+
+    console.log('----------遍历字符串-------------');
+    const str = 'Land Rover';
+    for (const strValue of str) {
+        console.log(strValue);
+    }
+
+    console.log('----------遍历参数对象-------------');
+
+    function args() {
+        for (const arg of arguments) {
+            console.log(arg);
+        }
+    }
+
+    args('Land', 'River', 'Ocean');
+
+    console.log('-----------for-in--VS---for--of----');
+    console.log('------for----of----');
+    Array.prototype.newArr = () => {
+    };
+    Array.prototype.anotherNewArr = () => {
+    };
+    const arrayOf = ['foo', 'bar', 'baz'];
+
+    for (const valueOf of arrayOf) {
+        console.log(valueOf);
+    }
+    console.log('-------for---in----');
+
+    const arrayIn = ['foo', 'bar', 'baz'];
+
+    for (const valueIn in arrayIn) {
+        console.log(valueIn);
+    }
+
+</script>
+
+</body>
+</html>

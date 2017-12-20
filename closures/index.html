@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>button1</button>
+<button>button2</button>
+<button>button3</button>
+<button>button4</button>
+<button>button5</button>
+<script>
+    var nodes = document.getElementsByTagName('button');
+    for (var i = 0; i < nodes.length; i++) {
+        console.log('循环node111：' + i);
+        nodes[i].addEventListener('click', function () {
+                console.log('You clicked element---111--- #' + i);
+        });
+    }
+
+    /*方法一、利用立即执行函数表达式，创建闭包*/
+    var nodes2 = document.getElementsByTagName('button');
+    for (var j = 0;  j< nodes2.length; j++) {
+        nodes2[j].addEventListener('click', (function (j) {
+            return function () {
+                console.log('You clicked element--222-- #' + j);
+            }
+        })(j));
+    }
+
+    /* 方法二：将函数移至外边，实现点击具体按钮，显示具体数字*/
+    function handlerWrapper(k0) {
+        return function () {
+            console.log('You clicked element---333--- #' + k0);
+        }
+    }
+
+    var nodes3 = document.getElementsByTagName('button');
+    for (var k = 0; k < nodes3.length; k++) {
+        nodes3[k].addEventListener('click', handlerWrapper(k));
+    }
+</script>
+</body>
+</html>

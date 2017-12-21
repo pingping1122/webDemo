@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3动画@keyframe</title>
+    <style>
+
+        div {
+            height: 200px;
+            width: 200px;
+            animation: first 10s;
+            -webkit-animation:first 10s; /* Safari and Chrome */
+        }
+
+        @keyframes first {
+            from {
+                background-color: #ec971f;
+            }
+            to {
+                background-color: #00e7eb;
+            }
+        }
+        @-webkit-keyframes first {
+            from {
+                background-color: #ec971f;
+            }
+            to {
+                background-color: #00e7eb;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<!--translate-->
+<div>@keyframe---测试css3的动画效果</div>
+</body>
+</html>

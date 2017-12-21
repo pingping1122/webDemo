@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D转换</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: #000;
+        }
+
+        div.div_translate {
+            transform: translate(10px, 20px);
+            -ms-transform: translate(10px, 20px); /* IE 9 */
+            -webkit-transform: translate(10px, 20px); /*Safari and Chrome*/
+            background-color: #da4453;
+        }
+
+        div.div_roate {
+            transform: rotate(30deg);
+            -ms-transform: rotate(30deg); /* IE 9 */
+            -webkit-transform: rotate(30deg); /*Safari and Chrome*/
+            transform-origin: 100% 100%; /* 设置旋转中心--（100% 100%为元素右下角）（50% 50%为元素中心--默认值）（0% 0%为元素左上角）*/
+            -ms-transform-origin: 100% 100%;
+            -webkit-transform-origin: 100% 100%;
+            background-color: #ec971f;
+        }
+        div.div_scale{
+            transform: scale(2, 3);
+            -ms-transform: scale(2, 3); /* IE 9 */
+            -webkit-transform: scale(2, 3); /*Safari and Chrome*/
+            background-color: #2ce28a;
+        }
+        div.div_skew{
+            transform: skew(30deg,20deg);
+            -ms-transform: skew(30deg,20deg);
+            -webkit-transform: skew(30deg,20deg);
+            background-color: #00e7eb;
+        }
+    </style>
+</head>
+<body>
+<!--translate-->
+<div>测试css3的2D效果</div>
+<!--<div class="div_translate">translate平移&#45;&#45;给定左上角坐标轴，向右或向下移动</div>
+<div class="div_roate">rotate旋转&#45;&#45;顺时针旋转度数，负值代表逆时针旋转</div>
+<div class="div_scale">scale缩放&#45;&#45;x轴y轴缩放比例</div>-->
+<div class="div_skew">skew倾斜</div>
+</body>
+</html>

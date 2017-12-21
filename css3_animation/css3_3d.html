@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D转换</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color:#2ce28a;
+        }
+        div.div_roateX {
+            transform: rotateX(180deg);
+            -ms-transform: rotateX(180deg); /* IE 9 */
+            -webkit-transform: rotateX(180deg); /*Safari and Chrome*/
+            background-color:#ec971f;
+        }
+
+
+        div.div_roateY {
+            transform: rotateY(130deg);
+            -ms-transform: rotateY(130deg); /* IE 9 */
+            -webkit-transform: rotateY(130deg); /*Safari and Chrome*/
+            background-color:#da4453;
+        }
+
+    </style>
+</head>
+<body>
+<!--translate-->
+<div>测试css3的SD效果</div>
+<div class="div_roateX">rotateX--沿着X轴的3d旋转</div>
+<div class="div_roateY">rotateY--沿着Y轴的3d旋转</div>
+</body>
+</html>

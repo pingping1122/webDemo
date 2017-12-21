@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3过渡</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #ec971f;
+            transition: height 2s, width 10s, transform 20s;
+            -webkit-transition: height 2s, width 10s, transform 20s,background-color 10s;
+        }
+
+        div:hover {
+            width: 300px;
+            height: 500px;
+            transform: translate(30px, 40px);
+            -ms-transform: translate(30px, 40px);
+            -webkit-transform: translate(30px, 40px);
+            background-color: #da4453;
+
+        }
+    </style>
+</head>
+<body>
+<div>测试css3的过渡属性</div>
+</body>
+</html>

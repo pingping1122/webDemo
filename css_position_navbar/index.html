@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css定位实现的三层导航栏</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .panel {
+            height: 1200px;
+            width: 1200px;
+            background-color: #ccc;
+        }
+
+        .nav {
+            width: 160px;
+            height: 164px; /*由nav_li： 40*4+4*1=164*/
+            position: fixed;
+            top: 50%;
+            left: 0;
+            margin-top: -82px; /* 为高度的一半*/
+        }
+
+        .nav_li {
+            width: 160px;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+            background-color: black;
+            line-height: 40px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer; /*让一级二级栏目可点击*/
+        }
+
+        .tit {
+            width: 160px;
+            height: 40px;
+        }
+
+        .nav_li ul {
+            width: 160px;
+            height: auto;
+            display: none;
+        }
+
+        .nav_li ul li {
+            width: 160px;
+            height: 40px;
+            border-bottom: 1px dashed #ddd; /*虚线*/
+            color: #333;
+            background-color: white;
+            text-align: center;
+            line-height: 40px;
+            position: relative;
+
+        }
+
+        .nav_li:hover ul {
+            display: block;
+        }
+
+        /*三级栏目*/
+        .list-3 {
+            width: 160px;
+            height: auto;
+            background-color: #666;
+            color: black;
+            position: absolute; /*三级栏目右边显示,同时父元素需要有定位，才能控制子元素显示*/
+            left: 160px;
+            top: 0;
+            display:none;
+        }
+
+        .list-3Dom {
+            width: 160px;
+            height: 40px;
+            line-height: 40px;
+
+        }
+        .nav_li ul li:hover .list-3 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="panel">
+    <div class="nav">
+        <div class="nav_li">
+            <div class="tit">一级导航栏</div>
+            <ul>
+                <li>二级导航栏
+                    <div class="list-3">
+                        <div class="list-3Dom">三级栏目</div>
+                        <div class="list-3Dom">三级栏目</div>
+                        <div class="list-3Dom">三级栏目</div>
+                    </div>
+                </li>
+                <li>二级导航栏
+                    <div class="list-3">
+                        <div class="list-3Dom">三级栏目</div>
+                        <div class="list-3Dom">三级栏目</div>
+                        <div class="list-3Dom">三级栏目</div>
+                    </div></li>
+                <li>二级导航栏
+                    <div class="list-3">
+                        <div class="list-3Dom">三级栏目</div>
+                        <div class="list-3Dom">三级栏目</div>
+                        <div class="list-3Dom">三级栏目</div>
+                    </div></li>
+            </ul>
+        </div>
+        <div class="nav_li">
+            <div class="tit">一级导航栏</div>
+            <ul>
+                <li>二级导航栏
+                </li>
+                <li>二级导航栏</li>
+                <li>二级导航栏</li>
+            </ul>
+        </div>
+        <div class="nav_li">
+            <div class="tit">一级导航栏</div>
+            <ul>
+                <li>二级导航栏</li>
+                <li>二级导航栏</li>
+                <li>二级导航栏</li>
+            </ul>
+        </div>
+        <div class="nav_li">
+            <div class="tit">一级导航栏</div>
+            <ul>
+                <li>二级导航栏</li>
+                <li>二级导航栏</li>
+                <li>二级导航栏</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

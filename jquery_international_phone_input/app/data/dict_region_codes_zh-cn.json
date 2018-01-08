@@ -1,0 +1,22 @@
+[
+  {
+    "region_code": "CN",
+    "region_desc": "中国大陆",
+    "phone_code": 86
+  },
+  {
+    "region_code": "HK",
+    "region_desc": "中国香港",
+    "phone_code": 852
+  },
+  {
+    "region_code": "TW",
+    "region_desc": "中国台湾",
+    "phone_code": 886
+  },
+  {
+    "region_code": "MO",
+    "region_desc": "中国澳门",
+    "phone_code": 853
+  }
+]

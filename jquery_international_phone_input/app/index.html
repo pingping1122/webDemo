@@ -2,9 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>国际化手机号码输入</title>
+    <!--<link rel="stylesheet" href="node_modules/intl-tel-input/build/css/intlTelInput.css">-->
+    <link rel="stylesheet" href="build/css/intlTelInput.css">
+    <style>
+        input {
+            width: 300px;
+            height: 40px;
+            margin: 50px;
+        }
+        button {
+            height: 40px;
+            width: 120px;
+        }
+    </style>
 </head>
 <body>
+<input type="tel" id="mobile_number">
+<button onclick="getNumber()">
+    获取输入值
+</button>
 
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<!--<script src="node_modules/intl-tel-input/build/js/intlTelInput.js"></script>-->
+<script src="build/js/intlTelInput.js"></script>
+<script>
+    var countries = [];
+    var countryData = $.fn.intlTelInput.getCountryData();
+    // console.log(countryData);
+    // 'http://g.danale.net/bms/data/v1/dict_region_codes_zh-cn.json'
+    $.get('data/dict_region_codes_zh-cn.json', function (result) {
+        countries.length = 0;
+        for (var i = 0; i < result.length; i++) {
+            countries.push((result[i].region_code).toLowerCase());
+        }
+        $('#mobile_number').intlTelInput({
+            onlyCountries: countries,
+            initialCountry: "cn",
+            separateDialCode: true,
+            preferredCountries: ["cn", "hk"],
+            /*geoIpLookup: function (callback) {
+                $.get('https://ipinfo.io', function () {
+                }, "jsonp").always(function (resp) {
+                    var countryCode = (resp && resp.country) ? resp.country : "";
+                    callback(countryCode);
+                });
+            },*/
+            //  utilsScript: "node_modules/intl-tel-input/build/js/utils.js" // just for formatting/placeholders etc
+            utilsScript: "build/js/utils.js"
+        });
+
+    });
+
+    function getNumber() {
+        console.log($('#mobile_number').val());
+        var countryData = $("#mobile_number").intlTelInput("getSelectedCountryData");
+        // console.log('countryData');
+        //console.log(countryData);
+        console.log('countryData:' + countryData.dialCode);
+    }
+
+    var options = {
+//是否允许下拉
+        allowDropdown: true,
+// if there is just a dial code in the input: remove it on blur, and re-add it on focus
+        autoHideDialCode: true,
+// 添加在所选国家例数输入占位符
+        autoPlaceholder: "polite",
+// 修改自动占位符
+        customPlaceholder: null,
+// 附加菜单到特定元素
+        dropdownContainer: "",
+// 不要显示这些国家
+        excludeCountries: [],
+// 在初始化过程中格式化的输入的值
+        formatOnDisplay: true,
+//更多的查找功能
+        geoIpLookup: null,
+//初始国家
+        initialCountry: "",
+// 不要插入国际拨号码
+        nationalMode: true,
+//数字类型用于占位符
+        placeholderNumberType: "MOBILE",
+// 只显示这些国家---可以通过接口调用之
+        onlyCountries: [],
+// 优先显示这些国家
+        preferredCountries: ["cn"],
+//在选定的标记旁边显示国家拨号码，因此它不是键入编号的一部分---是否将国别码显示在国旗旁边
+        separateDialCode: false,
+// 指定要启用验证/格式的一个专门用于脚本的路径
+        utilsScript: ""
+    };
+
+</script>
 </body>
 </html>

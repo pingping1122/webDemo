@@ -2,9 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>jquery实现列表多选框全选</title>
 </head>
-<body>
+<body ng-app="myModule" ng-controller="myCtrl">
+<div>
+    <table>
+        <tr ng-repeat="item in pageInput.array track by $index">
+            <td>
+                <input type="checkbox" name="selectFlag"
+                       ng-model="pageInput.selectedArray[$index].select"
+                       ng-click="selectItem($index)"
+                >多选框
+            </td>
+        </tr>
+    </table>
+</div>
+<input ng-click="selectAll()" type="checkbox" ng-model="pageInput.all_select">全选
+<!--<input ng-click="selectDis()" type="checkbox" ng-model="pageInput.dis_select">反选-->
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    angular.module('myModule', []).controller('myCtrl', function ($scope) {
+        $scope.pageInput = {
+            all_select: false,
+            dis_select: false,
+            array: ['12', '34', '56'],
+            selectedArray: [{}, {}, {}]
+        };
+        $scope.selectAll = function () {
+            if ($scope.pageInput.all_select) {
+                $scope.pageInput.dis_select = false;
+                for (var i = 0; i < $scope.pageInput.array.length; i++) {
+                    $scope.pageInput.selectedArray[i] = {};
+                    $scope.pageInput.selectedArray[i].select = true;
+                }
+            } else {
+                for (var j = 0; j < $scope.pageInput.array.length; j++) {
+                    $scope.pageInput.selectedArray[j] = {};
+                    $scope.pageInput.selectedArray[j].select = false;
+                }
+            }
+        };
+        $scope.selectDis = function () {
+            if ($scope.pageInput.dis_select) {
+                $scope.pageInput.all_select = false;
+                for (var t = 0; t < $scope.pageInput.array.length; t++) {
+                    $scope.pageInput.selectedArray[t] = {};
+                    if ($scope.pageInput.selectedArray[t].select) {
+                        $scope.pageInput.selectedArray[t].select = false;
+                    }
+                    else {
+                        $scope.pageInput.selectedArray[t].select = true;
+                    }
+                }
+            }
+        };
+        $scope.selectItem = function (selectedIndex) {
+            if (!$scope.pageInput.selectedArray[selectedIndex].select) {
+                $scope.pageInput.all_select = false;
+            }
+            var count = 0;
+            for (var j = 0; j < $scope.pageInput.array.length; j++) {
+                if ($scope.pageInput.selectedArray[j].select) {
+                    count++;
+                }
+            }
+            if (count === $scope.pageInput.array.length) {
+                $scope.pageInput.all_select = true;
+            }
 
+        }
+    });
+</script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+{
+  "name": "input",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "intl-tel-input": "^12.1.6",
+    "jquery": "^3.2.1"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局--左右固定，中间自适应布局</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width:800px;
+            margin:0 auto;
+        }
+        .left {
+            width:100px;
+            height: 500pc;
+            position: absolute;
+            left:0;
+            top:0;
+            background-color: #0EB81D;
+        }
+        .center{
+            height: 500pc;
+           margin:0 200px 0 100px;
+            background-color: #ccc;
+        }
+        .right {
+            width:200px;
+            height: 500pc;
+            position: absolute;
+            right:0;
+            top: 0;
+            background-color: #2ce28a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left">这是左边</div>
+    <div class="center">这是中间自适应部分</div>
+    <div class="right">这是右边</div>
+
+
+</body>
+</html>

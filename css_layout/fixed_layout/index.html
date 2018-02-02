@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>混合布局</title>
+    <style type="text/css">
+        body{
+            padding:0;
+            margin:0;
+        }
+        .top{
+            height:100px;
+            background-color: #2ce28a;
+        }
+        .head{
+            width:800px;
+            height:100px;
+            margin:0 auto;
+            background-color: #9B0F10;
+        }
+        .foot{
+            width:800px;
+            height:100px;
+            background-color: #ec971f;
+            margin:0 auto;
+        }
+        .main {
+            width:800px;
+            height:600px;
+            margin:0 auto;
+        }
+        .left{
+            width:200px;
+            height:600px;
+            background-color: #0EB81D;
+            float:left;
+        }
+        .right{
+            width:600px;
+            height:600px;
+            float:right;
+            background-color: #00b89c;
+        }
+        .sub-l{
+            height:600px;
+            width:400px;
+            background-color: #da4453;
+            float:left;
+        }
+        .sub-r{
+            height:600px;
+            width:200px;
+            float:right;
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="head"></div>
+</div>
+<div class="main">
+    <div class="left"></div>
+    <div class="right">
+        <div class="sub-l"></div>
+        <div class="sub-r"></div>
+    </div>
+</div>
+<div class="foot"></div>
+</body>
+</html>
